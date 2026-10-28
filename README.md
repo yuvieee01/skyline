@@ -11,3 +11,4 @@ An interactive web project demonstrating a skyline transition between Day Mode a
 - `skyline_night_mode_demo.html` - Main HTML markup
 - `skyline_night_mode_demo.css` - Styles and visual transitions
 - `skyline_night_mode_demo.js` - Toggle logic and window lighting randomization
+
