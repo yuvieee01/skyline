@@ -1,0 +1,161 @@
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 24px;
+      background: #f3f6fa;
+      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      text-align: center;
+    }
+
+    .subtitle {
+      margin: -8px 0 2px;
+      color: #5d687a;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* The skyline is the sky/background area. JavaScript toggles its .night class. */
+    .skyline {
+      position: relative;
+      width: min(100%, 700px);
+      height: 360px;
+      overflow: hidden;
+      border: 3px solid #26354d;
+      border-radius: 12px;
+      background: #55aaf5;
+      box-shadow: 0 16px 38px rgba(23, 32, 51, 0.16);
+      transition: background-color 350ms ease;
+    }
+
+    .skyline.night {
+      background: #050914;
+    }
+
+    .sun-moon {
+      position: absolute;
+      top: 28px;
+      right: 42px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #ffe58a;
+      box-shadow: 0 0 24px rgba(255, 229, 138, 0.4);
+      transition: all 350ms ease;
+    }
+
+    .skyline.night .sun-moon {
+      background: #f2f4ff;
+      box-shadow: 0 0 20px rgba(242, 244, 255, 0.25);
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0;
+      transition: opacity 350ms ease;
+    }
+
+    .skyline.night .star { opacity: 0.9; }
+    .star-one { top: 46px; left: 16%; }
+    .star-two { top: 96px; left: 30%; }
+    .star-three { top: 38px; left: 52%; }
+    .star-four { top: 118px; left: 68%; }
+    .star-five { top: 76px; left: 82%; }
+
+    .ground {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 25px;
+      background: #65717e;
+    }
+
+    /* The building and its windows are deliberately simple, like a coding-test task. */
+    .building {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 270px;
+      padding: 20px 18px;
+      background: #bfc5cc;
+      border: 3px solid #788493;
+      border-bottom: 0;
+      box-shadow: 12px 0 0 rgba(30, 41, 59, 0.12);
+    }
+
+    .building-roof {
+      position: absolute;
+      top: -16px;
+      left: -7px;
+      right: -7px;
+      height: 16px;
+      background: #8a95a3;
+      border: 2px solid #667282;
+    }
+
+    .windows {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 12px;
+      height: 100%;
+    }
+
+    .window {
+      min-height: 28px;
+      background-color: gray;
+      border: 3px solid #edf0f3;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.13);
+      transition: background-color 200ms ease;
+    }
+
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 24px;
+      background: #1e3a5f;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #122944;
+      transition: transform 120ms ease, background-color 180ms ease;
+    }
+
+    button:hover { background: #2d527f; }
+    button:active { transform: translateY(3px); box-shadow: 0 2px 0 #122944; }
+    button:focus-visible { outline: 3px solid #f0b429; outline-offset: 4px; }
+
+    .hint {
+      max-width: 700px;
+      margin: 0;
+      color: #596579;
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      .skyline { height: 320px; }
+      .building { width: 220px; height: 235px; padding: 16px; }
+      .windows { gap: 11px 9px; }
+      .window { min-height: 25px; }
+    }

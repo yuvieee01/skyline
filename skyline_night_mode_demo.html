@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyline Night Mode Exercise</title>
+  <link rel="stylesheet" href="skyline_night_mode_demo.css" />
+</head>
+<body>
+  <h1>Skyline: Day Mode / Night Mode</h1>
+  <p class="subtitle">Click the button to turn on night mode and randomly light some windows.</p>
+
+  <div class="skyline" id="skyline">
+    <div class="sun-moon" aria-hidden="true"></div>
+    <div class="star star-one" aria-hidden="true"></div>
+    <div class="star star-two" aria-hidden="true"></div>
+    <div class="star star-three" aria-hidden="true"></div>
+    <div class="star star-four" aria-hidden="true"></div>
+    <div class="star star-five" aria-hidden="true"></div>
+
+    <div class="building">
+      <div class="building-roof" aria-hidden="true"></div>
+      <div class="windows" id="windows">
+        <div class="window"></div><div class="window"></div><div class="window"></div><div class="window"></div>
+        <div class="window"></div><div class="window"></div><div class="window"></div><div class="window"></div>
+        <div class="window"></div><div class="window"></div><div class="window"></div><div class="window"></div>
+        <div class="window"></div><div class="window"></div><div class="window"></div><div class="window"></div>
+      </div>
+    </div>
+    <div class="ground" aria-hidden="true"></div>
+  </div>
+
+  <button id="modeButton" type="button">Night Mode</button>
+  <p class="hint">Practice focus: select every <code>.window</code>, generate a random 0 or 1 for each one, and set its background to yellow when the value is 1 or gray when it is 0.</p>
+
+  <script src="skyline_night_mode_demo.js"></script>
+</body>
+</html>
